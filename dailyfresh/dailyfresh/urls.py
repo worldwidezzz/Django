@@ -20,5 +20,8 @@ from django.conf.urls import url, include
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^user/', include('df_user.urls'), name='df_user'),
-    url(r'^goods/', include('df_goods.urls'), name='df_goods'),
+    url(r'^goods/', include('df_goods.urls')),
+    url(r'^', include(('df_goods.urls', 'df_goods'), namespace='goods')),
+    url(r'^cart/', include('df_cart.urls')),
 ]
+

@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7(w!6ajc08&8@q6*j0=sg5@jozv+=($i_w-llinms4tazpt!ij'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'df_user',
     'tinymce',
     'df_goods',
+    'df_cart',
+    'df_order'
 ]
 
 MIDDLEWARE = [
@@ -129,11 +131,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+STATIC_ROOT = '/var/www/dailyfresh/static/'
 
 # 开发阶段文件上传目录
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 # 部署阶段文件上传目录
-# MEDIA_ROOT='/var/www/dailyfresh/static'
+MEDIA_ROOT = '/var/www/dailyfresh/static'
 
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'advanced',
